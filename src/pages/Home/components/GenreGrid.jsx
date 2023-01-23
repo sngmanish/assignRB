@@ -2,6 +2,8 @@ import React from "react";
 import "../../../Style/stories.css";
 import MovieCard from "./MovieCard";
 
+
+// will render a single genre
 const GenreGrid = ({ genreName, moviesData }) => {
   return (
     <>
