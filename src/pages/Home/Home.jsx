@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-      {data.length === 0 ? (
+      {data?.length === 0 ? (
         <h1>Please begin searching....</h1>
       ) : (
         <MovieGrids data={data} />
