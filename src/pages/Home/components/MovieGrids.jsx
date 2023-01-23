@@ -2,6 +2,7 @@ import React from "react";
 import GenreGrid from "./GenreGrid";
 
 const MovieGrids = ({ data }) => {
+  // Grouping movies by genre
   const MoviesSortedByGenre = data?.reduce((acc, curr) => {
     curr.show.genres.forEach((genre) =>
       acc[genre] ? acc[genre].push(curr) : (acc[genre] = [curr])
@@ -9,7 +10,7 @@ const MovieGrids = ({ data }) => {
     return acc;
   }, {});
 
-  // console.log(Object.entries(MoviesSortedByGenre));
+  console.log(Object.entries(MoviesSortedByGenre || {}));
 
   return (
     <div className="cards">

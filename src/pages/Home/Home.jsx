@@ -4,9 +4,12 @@ import axios from "axios";
 import Header from "./components/Header";
 import MovieGrids from "./components/MovieGrids";
 
+// import Details from "../Details/Details";
+
 const Home = () => {
   const [data, setdata] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
     axios
       .get(`http://api.tvmaze.com/search/shows?q=${searchTerm}`)
@@ -18,9 +21,11 @@ const Home = () => {
         console.log(err);
       });
   }, [searchTerm]);
+
   return (
     <>
       <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+
       {data?.length === 0 ? (
         <h1>Please begin searching....</h1>
       ) : (

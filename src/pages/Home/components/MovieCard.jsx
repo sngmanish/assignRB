@@ -3,19 +3,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Style/stories.css";
 const MovieCard = ({ movieData }) => {
-  const navigate = useNavigate();
   console.log(movieData);
-  //   shadows.image.medium
+  const navigate = useNavigate();
 
-  const handleImageClick = () => {
-    // navigate.push(`/Details/${}`)
+  const handleMovieClick = () => {
+    navigate(`/Details/${movieData?.show?.id}`);
   };
+
   return (
     <div className="card">
       <img
         src={movieData?.show?.image?.medium}
         alt={movieData?.show?.name}
-        onClick={handleImageClick}
+        onClick={() => handleMovieClick()}
       />
     </div>
   );
