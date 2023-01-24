@@ -19,7 +19,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
       <div>
         <form onSubmit={handleSubmit}>
           <span>
-            <VscSearch size={20} fontWeight={VscBold} />
+            {/* <VscSearch size={20} fontWeight={VscBold} /> */}
           </span>
           <input
             type="text"
