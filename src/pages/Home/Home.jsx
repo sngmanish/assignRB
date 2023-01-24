@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import MovieGrids from "./components/MovieGrids";
+import "../../Style/Home.css"
 
 // import Details from "../Details/Details";
 

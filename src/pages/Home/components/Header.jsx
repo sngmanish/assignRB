@@ -1,5 +1,6 @@
 import React from "react";
-import { VscSearch } from "react-icons/vsc";
+import { VscBold, VscSearch } from "react-icons/vsc";
+import "../../../Style/Header.css"
 
 const Header = ({ searchTerm, setSearchTerm }) => {
   const handleChange = (event) => {
@@ -14,11 +15,11 @@ const Header = ({ searchTerm, setSearchTerm }) => {
 
   return (
     <nav>
-      <div> TV MAZE </div>
+      <div className="tvlogo"> TV MAZE </div>
       <div>
         <form onSubmit={handleSubmit}>
           <span>
-            <VscSearch />
+            <VscSearch size={20} fontWeight={VscBold} />
           </span>
           <input
             type="text"
