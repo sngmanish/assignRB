@@ -2,12 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useMatch } from "react-router-dom";
 import axios from "axios";
-import Header from "../Home/components/Header";
+
 
 const Details = () => {
   // state containing movie details 
   const [currentMovieData, setCurrentMovieData] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
 
   const currentMovieId = useMatch("Details/:id")?.params?.id;
 
@@ -25,16 +24,18 @@ const Details = () => {
 
   return (
     <div>
-      <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-      <h1>hello from the other side</h1>
-      {
-          <div>
+      
+      <div className="container">
+        <img src={currentMovieData?.image?.medium} alt="" />
 
-            <img src={currentMovieData.image.medium} alt="" />
+        <div>
+            {/* {currentMovieData?.summary} */}
+            <div dangerouslySetInnerHTML={{ __html: currentMovieData?.summary }} />
 
-          </div>
-       
-      }
+        </div>
+
+      </div>
+      
     </div>
   );
 };
